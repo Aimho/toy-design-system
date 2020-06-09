@@ -1,6 +1,6 @@
-# AimHo Design System
+# Design System
 
-- React Storybook & Material-ui를 사용한 AimHo Design System 입니다.
+- React Storybook & Material-ui를 사용한 Design System 입니다.
 - 'components' 폴더에 컴포넌트를 추가하고 'stories'폴더에 story코드를 작성합니다.
 - [Material-UI](https://material-ui.com/) 스타일을 Custom하여 사용하고, 원하는 컴포넌트가 없는 경우 외부 라이브러리 or 직접 생성하여 사용합니다.
 
