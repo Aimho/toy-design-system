@@ -1,0 +1,25 @@
+@import "../../utils/theme.scss";
+
+.cr-carousel {
+  position: relative;
+  z-index: 10;
+
+  .control-btn {
+    background-color: transparent;
+    justify-content: center;
+    margin-top: -24px;
+    .cr-button {
+      position: absolute;
+      top: calc(50% - 10px);
+      &.next-btn {
+        right: 0;
+      }
+      &.back-btn {
+        left: 0;
+      }
+    }
+    > div {
+      z-index: $ZIndex_mobileStepper;
+    }
+  }
+}

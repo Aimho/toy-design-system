@@ -1,0 +1,10 @@
+@import "../../utils/theme.scss";
+
+.cr-chip {
+  .MuiChip-label {
+    color: inherit;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

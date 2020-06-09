@@ -1,0 +1,164 @@
+@import "../../utils/theme.scss";
+
+@mixin setInit {
+  &.MuiButton-contained,
+  &.MuiButton-contained:hover {
+    box-shadow: none;
+  }
+  &.MuiButton-outlined,
+  &.MuiButton-outlined:hover,
+  &.MuiButton-text,
+  &.MuiButton-text:hover {
+    background-color: transparent;
+  }
+  &.Mui-disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  .MuiButton-label {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    .MuiButton-startIcon,
+    .MuiButton-endIcon {
+      color: inherit;
+    }
+  }
+}
+
+@mixin setBtnSize {
+  &.MuiButton-root {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 18px;
+    .MuiButton-iconSizeMedium > *:first-child {
+      font-size: inherit;
+    }
+  }
+  &.MuiButton-sizeSmall {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 12px;
+    .MuiButton-iconSizeSmall > *:first-child {
+      font-size: inherit;
+    }
+  }
+  &.MuiButton-sizeLarge {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 10px 24px;
+    .MuiButton-iconSizeLarge > *:first-child {
+      font-size: inherit;
+    }
+  }
+}
+
+@mixin setBtnStyle {
+  &.MuiButton-contained {
+    &.primary {
+      background-color: $Primary_500;
+      color: $Gray_000;
+    }
+    &.primary:hover {
+      background-color: #42a5f5;
+    }
+    &.secondary {
+      background-color: $Primary_900;
+      color: $Gray_000;
+    }
+    &.secondary:hover {
+      background-color: #295497;
+    }
+    &.cancel {
+      background-color: $Gray_600;
+      color: $Gray_000;
+    }
+    &.cancel:hover {
+      background-color: #a3adb2;
+    }
+    &.error {
+      background-color: $Error_Base;
+      color: $Gray_000;
+    }
+    &.error:hover {
+      background-color: #e95753;
+    }
+  }
+  &.MuiButton-outlined {
+    &.primary {
+      border-color: $Primary_500;
+      color: $Primary_500;
+    }
+    &.primary:hover {
+      background-color: $Primary_50;
+    }
+    &.error {
+      border-color: $Error_Dark;
+      color: $Error_Dark;
+    }
+    &.error:hover {
+      background-color: $Error_Light;
+    }
+    &.white {
+      border-color: $Gray_000;
+      color: $Gray_000;
+    }
+  }
+  &.MuiButton-text {
+    padding: 0px;
+    min-width: auto;
+    &.primary {
+      color: $Primary_500;
+    }
+    &.primary:hover {
+      color: #42a5f5;
+    }
+    &.secondary {
+      color: $Primary_900;
+    }
+    &.secondary:hover {
+      color: #295497;
+    }
+    &.cancel {
+      color: $Gray_600;
+    }
+    &.cancel:hover {
+      color: #a3adb2;
+    }
+    &.error {
+      color: $Error_Base;
+    }
+    &.error:hover {
+      color: #e95753;
+    }
+    &.white {
+      color: $Gray_000;
+    }
+  }
+}
+
+.cr-button {
+  @include setInit();
+
+  font-weight: 500;
+  cursor: pointer;
+
+  @include setBtnSize();
+  @include setBtnStyle();
+}
+
+.cr-button-group-mr > .cr-button {
+  &:last-child {
+    margin-right: 0px;
+  }
+  margin-right: 12px;
+}
+
+.cr-button-group-mb > .cr-button {
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  margin-bottom: 12px;
+}

@@ -1,0 +1,32 @@
+@import "../../utils/theme.scss";
+@mixin setInit {
+  .MuiSwitch-root .MuiIconButton-root .MuiSwitch-track {
+    background-color: $Background_Dark;
+  }
+  .MuiSwitch-root .MuiIconButton-label .MuiSwitch-thumb {
+    background-color: $Background_Light;
+  }
+
+  &.Mui-disabled {
+    cursor: default;
+    .MuiSwitch-root .MuiIconButton-label .MuiSwitch-thumb {
+      background-color: $Background_Dark;
+    }
+  }
+  .MuiFormControlLabel-label.Mui-disabled {
+    opacity: 1;
+  }
+}
+
+.cr-switch {
+  @include setInit();
+
+  &.checked-true {
+    .MuiSwitch-root .Mui-checked + .MuiSwitch-track {
+      background-color: $Primary_500;
+    }
+    .MuiIconButton-label .MuiSwitch-thumb {
+      background-color: $Primary_500;
+    }
+  }
+}

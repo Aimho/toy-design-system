@@ -1,0 +1,42 @@
+@import "../../utils/theme.scss";
+
+.cr-select {
+  background-color: $Gray_000;
+  border: 1px solid $Gray_300;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    cursor: pointer;
+    background-color: $Background_Light;
+  }
+  &:disabled,
+  &.Mui-disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  // size set
+  &.size-small > div {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 12px;
+    padding-right: 42px;
+  }
+  &.size-medium > div {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px;
+    padding-right: 42px;
+  }
+
+  // disabled mui css
+  .MuiOutlinedInput-notchedOutline {
+    border: 0px;
+  }
+  .MuiSelect-select:focus {
+    background-color: transparent;
+  }
+}

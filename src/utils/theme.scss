@@ -1,0 +1,64 @@
+// variable
+// primary color set
+$Primary_50: #e3f2fd;
+$Primary_100: #a7dfff;
+$Primary_500: #2196f3;
+$Primary_800: #1565c0;
+$Primary_900: #033685;
+$Primary_1000: #263651;
+// error color set
+$Error_Light: #fce7e7;
+$Error_Base: #e53935;
+$Error_Dark: #c62828;
+// warning color set
+$Warning_Light: #fff5e5;
+$Warning_Base: #ffc107;
+$Warning_Dark: #ffa000;
+// gray scales color set
+$Gray_000: #ffffff;
+$Gray_300: #c9d1d6;
+$Gray_600: #939fa5;
+$Gray_900: #323d45;
+// background color set
+$Background_Light: #f5f5f5;
+$Background_Base: #e5e5e5;
+$Background_Dark: #c2c2c2;
+// breakpoint values
+$Breakpoint_xs: "0px";
+$Breakpoint_sm: "600px";
+$Breakpoint_md: "960px";
+$Breakpoint_lg: "1280px";
+$Breakpoint_xl: "1960px";
+// z-index values
+$ZIndex_mobileStepper: 1000;
+$ZIndex_speedDial: 1050;
+$ZIndex_appBar: 1100;
+$ZIndex_drawer: 1200;
+$ZIndex_modal: 1300;
+$ZIndex_snackbar: 1400;
+$ZIndex_tooltip: 1500;
+
+/**
+* font-size px to em formatter
+* IE의 경우 font가 크롬보다 2px정도 크기 때문에
+* IE에서도 font-size를 유지하고 싶은 컴포넌트는
+* 단위를 em으로 설정하고 상위 font-size를 2px 줄임
+*/
+@function pxToEm($px) {
+  $convertRem: $px / 16;
+  @return $convertRem;
+}
+
+/**
+* Typography font-size, line-height 설정하기 위한 Mixin
+*/
+@mixin setFontSize($fontSize, $lineHeight) {
+  &.em {
+    font-size: #{pxToEm($fontSize)}em;
+    line-height: #{pxToEm($lineHeight)}em;
+  }
+  &.px {
+    font-size: #{$fontSize}px;
+    line-height: #{$lineHeight}px;
+  }
+}

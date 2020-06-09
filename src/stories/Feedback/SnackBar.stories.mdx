@@ -1,0 +1,70 @@
+import MaterialSnackbar from "@material-ui/core/Snackbar";
+import {
+  Meta,
+  Story,
+  Props,
+  Description,
+  Preview
+} from "@storybook/addon-docs/blocks";
+import { cInfo, cError } from "../../components/Feedback/SnackBar";
+
+<Meta title="Feedback|SnackBar" />
+
+# SnackBar
+
+SnackBar를 호출하는 api는 ***notistack***이라는 외부 라이브러리를 사용하며, cr-uikit에서는 호출되는 컴포넌트만 제작했습니다.
+
+notistack: https://github.com/iamhosseindhv/notistack
+
+<Preview>
+  <section style={{ padding: "40px" }}>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
+      {cInfo("message info")}
+      <br />
+      {cError("message error")}
+    </div>
+  </section>
+</Preview>
+
+## ProviderOption
+
+notistack Provider에 적용할 Option
+- @return ProviderOption: ISnackBarProviderOptions
+  - anchorOrigin: { vertical: "top", horizontal: "right" }
+  - autoHideDuration: 3000
+  - maxSnack: 3
+
+
+```
+import { SnackbarProvider } from 'notistack';
+import { SnackBar } from '@ateam/cr-uikit';
+
+<SnackbarProvider {...SnackBar.ProviderOption}>
+    <App />
+</SnackbarProvider>
+```
+
+## SnackBarContent
+ notistack의 enqueueSnackbar를 통해 호출할 Snackbar 컴포넌트 입니다.
+ - cInfo({key: string, message: any})
+ - cError({key: string, message: any})
+
+```
+import { withSnackbar, WithSnackbarProps } from 'notistack';
+import { SnackBar } from '@ateam/cr-uikit';
+import { SnackBarVariant } from '@ateam/cr-uikit/dist/components/Feedback/SnackBarType';
+
+const Example: React.FC<WithSnackbarProps> = (props) => {
+    const onClick = () => {
+        props.enqueueSnackbar('example snackbar', {
+            variant: 'info',
+            content: (key, message) =>  SnackBar.cInfo({ key: key, message: message })
+        });
+    }
+    return (
+        <button onClick={onClick}>test</button>
+    )
+}
+
+export default withSnackbar(Example);
+```

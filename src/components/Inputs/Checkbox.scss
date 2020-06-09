@@ -1,0 +1,63 @@
+@import "../../utils/theme.scss";
+
+// material-ui color setting
+@mixin materialCheckboxColor($color) {
+  > .MuiCheckbox-root,
+  .MuiIconButton-label .MuiSvgIcon-root {
+    color: $color;
+  }
+}
+
+@mixin setInit {
+  @include materialCheckboxColor($Gray_900);
+  .MuiIconButton-label .MuiSvgIcon-root {
+    color: $Gray_600;
+  }
+
+  > .MuiCheckbox-root,
+  .MuiIconButton-label .MuiSvgIcon-root,
+  .MuiFormControlLabel-label {
+    opacity: inherit;
+  }
+
+  &.Mui-disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  .MuiIconButton-root {
+    padding: 0px;
+    padding-right: 10px;
+  }
+
+  &.MuiFormControlLabel-root {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .MuiFormControlLabel-label.Mui-disabled {
+    opacity: 1;
+  }
+}
+
+.cr-checkbox-item {
+  @include setInit();
+
+  &:hover:not(.Mui-disabled),
+  &.checked-true {
+    @include materialCheckboxColor($Primary_500);
+  }
+}
+
+.cr-checkbox-mr > .cr-checkbox-item {
+  &:last-child {
+    margin-right: 0px;
+  }
+  margin-right: 28px;
+}
+
+.cr-checkbox-mb > .cr-checkbox-item {
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  margin-bottom: 20px;
+}

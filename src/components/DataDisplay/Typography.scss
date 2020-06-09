@@ -1,0 +1,49 @@
+@import "../../utils/theme.scss";
+
+.cr-typography {
+  word-break: keep-all;
+  &.MuiTypography-h1 {
+    @include setFontSize(40, 60);
+    font-weight: 600;
+  }
+  &.MuiTypography-h2 {
+    @include setFontSize(32, 48);
+    font-weight: 600;
+  }
+  &.MuiTypography-h3 {
+    @include setFontSize(25, 40);
+    font-weight: 600;
+  }
+  &.MuiTypography-h4 {
+    @include setFontSize(20, 32);
+    font-weight: 600;
+  }
+  &.MuiTypography-h5 {
+    @include setFontSize(16, 24);
+    font-weight: 600;
+  }
+  &.MuiTypography-h6 {
+    @include setFontSize(14, 20);
+    font-weight: 600;
+  }
+  &.MuiTypography-subtitle1 {
+    @include setFontSize(16, 24);
+    font-weight: 500;
+  }
+  &.MuiTypography-subtitle2 {
+    @include setFontSize(14, 20);
+    font-weight: 500;
+  }
+  &.MuiTypography-body1 {
+    @include setFontSize(16, 24);
+    font-weight: 400;
+  }
+  &.MuiTypography-body2 {
+    @include setFontSize(14, 20);
+    font-weight: 400;
+  }
+  &.MuiTypography-caption {
+    @include setFontSize(12, 18);
+    font-weight: 400;
+  }
+}

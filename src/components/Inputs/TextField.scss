@@ -1,0 +1,79 @@
+@import "../../utils/theme.scss";
+
+@mixin setInit {
+  // hidden number arrow
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  > div {
+    background-color: $Gray_000;
+    color: $Gray_900;
+    fieldset.MuiOutlinedInput-notchedOutline {
+      border-color: $Gray_300;
+      span {
+        color: $Gray_300;
+      }
+    }
+    &:disabled,
+    &.Mui-disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+    .MuiSelect-select:focus {
+      background-color: transparent;
+    }
+  }
+
+  .MuiOutlinedInput-root:hover,
+  .Mui-focused {
+    cursor: text;
+    caret-color: $Primary_500;
+    fieldset.MuiOutlinedInput-notchedOutline {
+      border-color: $Primary_500;
+      span {
+        color: $Gray_300;
+      }
+    }
+  }
+
+  label.MuiFormLabel-root {
+    color: $Gray_300;
+    &.Mui-focused {
+      color: $Gray_600;
+    }
+  }
+}
+
+.cr-text-field {
+  @include setInit();
+
+  // multi line style
+  &.multi-true {
+    > div {
+      height: inherit;
+      min-height: inherit;
+      align-items: flex-start;
+    }
+  }
+
+  // size set
+  &.size-small > div {
+    font-size: 14px;
+    line-height: 20px;
+    input {
+      padding: 10px 12px;
+      height: auto;
+    }
+  }
+  &.size-medium > div {
+    font-size: 16px;
+    line-height: 24px;
+    input {
+      padding: 16px;
+      height: auto;
+    }
+  }
+}

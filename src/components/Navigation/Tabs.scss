@@ -1,0 +1,17 @@
+@import "../../utils/theme.scss";
+
+.cr-tabs {
+  .MuiTab-root {
+    border-bottom: solid 3px $Gray_300;
+    .MuiTab-wrapper {
+      color: $Gray_600;
+    }
+    &.Mui-selected {
+      border-color: $Primary_500;
+      .MuiTab-wrapper {
+        color: $Primary_500;
+        font-weight: 600;
+      }
+    }
+  }
+}
