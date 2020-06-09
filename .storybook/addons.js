@@ -4,7 +4,7 @@ import { create } from "@storybook/theming/create";
 
 const theme = create({
   base: "light",
-  brandTitle: "Creatable Design System",
+  brandTitle: "Design System",
   brandUrl: "/"
 });
 
