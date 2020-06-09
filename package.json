@@ -7,8 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
-    "prebuild": "rm -rf dist && tsc",
-    "build": "cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/utils dist/",
+    "build": "build-storybook",
     "prepublishOnly": "rm -rf dist && tsc && cp -R src/assets dist/ && cp -R src/components dist/ && cp -R src/utils dist/"
   },
   "repository": {
