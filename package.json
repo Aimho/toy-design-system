@@ -23,7 +23,7 @@
     "@types/react-swipeable-views-utils": "^0.13.2",
     "@types/styled-components": "^5.1.0",
     "intersection-observer": "^0.7.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react-calendar": "^3.1.0",
     "react-swipeable-views": "^0.13.9",
     "react-swipeable-views-utils": "^0.13.9",
